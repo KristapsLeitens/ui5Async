@@ -21,3 +21,6 @@ container configuration
     "npm install",
     "npm run start"
   ],
+  
+ install ui5
+ npm install -D sapui5-runtime
