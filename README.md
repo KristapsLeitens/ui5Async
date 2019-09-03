@@ -22,5 +22,8 @@ container configuration
     "npm run start"
   ],
   
+ install zip
+ sudo apt-get install unzip
+ 
  install ui5
  npm install -D sapui5-runtime
