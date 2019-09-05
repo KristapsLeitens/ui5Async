@@ -3,7 +3,7 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-				    <Text text="Simple app -1" id="__text4"/>
+				    <Text text="Simple app -1 test" id="__text4"/>
 				</content>
 			</Page>
 		</pages>
