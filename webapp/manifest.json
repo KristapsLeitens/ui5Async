@@ -42,6 +42,43 @@
 			"viewName": "simple-app.view.View1",
 			"type": "XML"
 		},
+    "routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "simple-app.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "pages",
+				"async": true,
+        "bypassed": {
+					"target": [
+						"View1"
+					]
+				}
+			},
+			"routes": [
+        {
+					"pattern": "",
+					"name": "View1",
+					"target": "View1"
+				},
+				{
+					"pattern": "collection/{colId}",
+					"name": "View2",
+					"target": "View2"
+				}
+			],
+			"targets": {
+				"View2": {
+					"viewName": "View2",
+					"viewId": "View2"
+				},
+        "View1": {
+					"viewName": "View1",
+					"viewId": "View1"
+				}
+			}
+		},
 		"dependencies": {
 			"minUI5Version": "1.30.0",
 			"libs": {

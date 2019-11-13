@@ -1,0 +1,102 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="simple-app.controller.View2" displayBlock="true" 	xmlns:l="sap.ui.layout" xmlns:tnt="sap.tnt" xmlns:uxap="sap.uxap">
+	<App>
+		<pages>
+			<Page title="Collection 1" showHeader="false">
+				<content>
+<!--             <Button press="toMain" text="back"></Button>Collection 1
+				    <Text text="Simple app -1 develop test 2" id="__text4"/> -->
+          	<tnt:ToolPage id="toolPage">
+              <tnt:header>
+                <tnt:ToolHeader>
+                  <Button id="sideNavigationToggleButton"
+                      icon="sap-icon://nav-back"
+                      type="Transparent"
+                      press="toMain">
+                    <layoutData>
+                      <OverflowToolbarLayoutData priority="NeverOverflow" />
+                    </layoutData>
+                  </Button>
+<!--                   <toolbarSpacer/> -->
+                  <Text text="Collecton 1"/>
+                </tnt:ToolHeader>
+              </tnt:header>
+              <tnt:sideContent>
+                <tnt:SideNavigation expanded="true"
+                          selectedKey="{/selectedKey}"
+                          itemSelect="onItemSelect">
+                  <tnt:NavigationList items="{path: '/navigation'}">
+                    <tnt:NavigationListItem text="{title}"
+                                icon="{icon}"
+                                enabled="{enabled}"
+                                expanded="{expanded}"
+                                items="{items}"
+                                key="{key}">
+                      <tnt:NavigationListItem text="{title}"
+                                  key="{key}"
+                                  enabled="{enabled}">
+                      </tnt:NavigationListItem>
+                    </tnt:NavigationListItem>
+                  </tnt:NavigationList>
+                  <tnt:fixedItem>
+                    <tnt:NavigationList items="{path: '/fixedNavigation'}">
+                      <tnt:NavigationListItem text="{title}"
+                                  icon="{icon}">
+                      </tnt:NavigationListItem>
+                    </tnt:NavigationList>
+                  </tnt:fixedItem>
+                </tnt:SideNavigation>
+              </tnt:sideContent>
+              <tnt:mainContents>
+                <NavContainer id="pageContainer" initialPage="page2">
+                  <pages>
+                   	<uxap:ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
+                      <uxap:headerTitle>
+                        <uxap:ObjectPageHeader objectImageURI="./test-resources/sap/uxap/images/imageID_275314.png"
+                                  objectTitle="Denise Smith"
+                                  objectImageShape="Circle"
+                                  objectImageAlt="Denise Smith"
+                                  isObjectIconAlwaysVisible="true"
+                                  objectSubtitle="Senior UI Developer">
+                          <uxap:actions>
+                            <uxap:ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized" tooltip="pull-down"/>
+                            <uxap:ObjectPageHeaderActionButton icon="sap-icon://show" text="show state" type="Emphasized" tooltip="show"/>
+                          </uxap:actions>
+                          <uxap:breadCrumbsLinks>
+                            <Link text="All Collections" press="handleLink1Press"/>
+                            <Link text="Collection 1" press="handleLink2Press"/>
+                            <Link text="media wall" press="handleLink2Press"/>
+                          </uxap:breadCrumbsLinks>
+                        </uxap:ObjectPageHeader>
+                      </uxap:headerTitle>
+
+                      <uxap:headerContent>
+                      </uxap:headerContent>
+
+                      <uxap:sections>
+                        <uxap:ObjectPageSection title="General">
+                          <uxap:subSections>
+                            <uxap:ObjectPageSubSection>
+                               <Text text="general"/> 
+                            </uxap:ObjectPageSubSection>
+                          </uxap:subSections>
+                        </uxap:ObjectPageSection>
+                      </uxap:sections>
+                      <uxap:sections>
+                        <uxap:ObjectPageSection title="About">
+                          <uxap:subSections>
+                            <uxap:ObjectPageSubSection>
+                               <Text text="about"/> 
+                            </uxap:ObjectPageSubSection>
+                          </uxap:subSections>
+                        </uxap:ObjectPageSection>
+                      </uxap:sections>
+                    </uxap:ObjectPageLayout>
+                  </pages>
+                </NavContainer>
+              </tnt:mainContents>
+            </tnt:ToolPage>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

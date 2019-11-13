@@ -7,7 +7,7 @@ sap.ui.define([
 	'sap/ui/model/json/JSONModel'
 ], function(Controller, ODataModel,oDataRequests,ajaxRequests,comonRequests,JSONModel) {
 	"use strict";
-	return Controller.extend("simple-app.controller.View1", {
+	return Controller.extend("simple-app.controller.View2", {
 		oDataRequests:oDataRequests,
 		ajaxRequests:ajaxRequests,
 		comonRequests:comonRequests,
@@ -16,6 +16,22 @@ sap.ui.define([
 			this.oDataModel=new ODataModel("https://services.odata.org/V2/Northwind/Northwind.svc/", true)
 // 			this.callService();
       var oModel = new JSONModel({
+        "fixedNavigation":[
+          {
+            "title":"Create wall",
+            "icon":"sap-icon://add"
+          }
+        ],
+        "navigation":[
+          {
+            "title":"Media Wall",
+            "icon":"sap-icon://media-play"
+          },
+          {
+            "title":"Social Wall",
+            "icon":"sap-icon://employee"
+          }
+        ],
         "TileCollection2":[
           {
             "type" : "Create",
@@ -106,34 +122,8 @@ sap.ui.define([
       });
 			this.getView().setModel(oModel);
 		},
-		callService:async function () {
-			var data = await this.callFirstService();
-			console.log(data);
-			//avoid error check for multiple requests at once
-			var requestArr=[
-				this.callFirstService(true),
-				this.callSecondService(true),
-				this.callODataService()
-			];
-			var allpromises= await this.comonRequests.callMultipleRequests(requestArr);
-			console.log(allpromises);
-			var data= await this.callODataService();
-			console.log(data);
-		},
-		callFirstService:function(avoidErrorCheck){
-			var attributes={url:"https://reqres.in/api/users"};
-			return this.ajaxRequests.callAjaxRequest(this.ajaxRequests.callAjaxPromise,attributes,avoidErrorCheck,{});
-		},
-		callSecondService:function(avoidErrorCheck){
-			var attributes={url:"https://reqres.in/api/users/2"};
-			return this.ajaxRequests.callAjaxRequest(this.ajaxRequests.callAjaxPromise,attributes,avoidErrorCheck,[]);
-		},
-		callODataService:function(avoidErrorCheck){
-			var attributes={url:"/Products"};
-			return this.oDataRequests.callODataRequest(this.oDataModel,this.oDataRequests.callODataPromise,attributes,avoidErrorCheck,[]);
-		},
-    toDetails:function(){
-      this._router.navTo("View2", {
+    toMain:function(){
+      this._router.navTo("View1", {
 						colId: "1"
 					}, true);
     }
