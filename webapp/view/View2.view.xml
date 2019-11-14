@@ -16,8 +16,18 @@
                       <OverflowToolbarLayoutData priority="NeverOverflow" />
                     </layoutData>
                   </Button>
-<!--                   <toolbarSpacer/> -->
                   <Text text="Collecton 1"/>
+                  <tnt:ToolHeaderUtilitySeparator />
+                  <ToolbarSpacer>
+                    <layoutData>
+                      <OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
+                    </layoutData>
+                  </ToolbarSpacer>
+                  <Button text="Open Client" icon="sap-icon://action"  type="Transparent" press="handleUserNamePress">
+                    <layoutData>
+                      <OverflowToolbarLayoutData priority="NeverOverflow" />
+                    </layoutData>
+                  </Button>
                 </tnt:ToolHeader>
               </tnt:header>
               <tnt:sideContent>
@@ -40,7 +50,8 @@
                   <tnt:fixedItem>
                     <tnt:NavigationList items="{path: '/fixedNavigation'}">
                       <tnt:NavigationListItem text="{title}"
-                                  icon="{icon}">
+                                  icon="{icon}"
+                                  press="onDialogPress">
                       </tnt:NavigationListItem>
                     </tnt:NavigationList>
                   </tnt:fixedItem>
@@ -62,7 +73,7 @@
                             <uxap:ObjectPageHeaderActionButton icon="sap-icon://show" text="show state" type="Emphasized" tooltip="show"/>
                           </uxap:actions>
                           <uxap:breadCrumbsLinks>
-                            <Link text="All Collections" press="handleLink1Press"/>
+                            <Link text="All Collections" press="toMain"/>
                             <Link text="Collection 1" press="handleLink2Press"/>
                             <Link text="media wall" press="handleLink2Press"/>
                           </uxap:breadCrumbsLinks>

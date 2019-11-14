@@ -19,7 +19,8 @@ sap.ui.define([
         "fixedNavigation":[
           {
             "title":"Create wall",
-            "icon":"sap-icon://add"
+            "icon":"sap-icon://add",
+            "press":"onDialogPress"
           }
         ],
         "navigation":[
@@ -126,7 +127,40 @@ sap.ui.define([
       this._router.navTo("View1", {
 						colId: "1"
 					}, true);
-    }
+    },
+    onDialogPress: function () {
+			if (!this.pressDialog) {
+				this.pressDialog = new Dialog({
+					title: 'Walls',
+					content: new List({
+						items: {
+							path: '/TileCollection',
+							template: new StandardListItem({
+								title: "{title}"
+							})
+						}
+					}),
+					beginButton: new Button({
+						type: ButtonType.Emphasized,
+						text: 'OK',
+						press: function () {
+							this.pressDialog.close();
+						}.bind(this)
+					}),
+					endButton: new Button({
+						text: 'Close',
+						press: function () {
+							this.pressDialog.close();
+						}.bind(this)
+					})
+				});
+
+				//to get access to the global model
+				this.getView().addDependent(this.pressDialog);
+			}
+
+			this.pressDialog.open();
+		}
 
 	});
 });
