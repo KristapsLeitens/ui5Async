@@ -58,52 +58,61 @@
                 </tnt:SideNavigation>
               </tnt:sideContent>
               <tnt:mainContents>
-                <NavContainer id="pageContainer" initialPage="page2">
-                  <pages>
-                   	<uxap:ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
-                      <uxap:headerTitle>
-                        <uxap:ObjectPageHeader objectImageURI="./test-resources/sap/uxap/images/imageID_275314.png"
-                                  objectTitle="Denise Smith"
-                                  objectImageShape="Circle"
-                                  objectImageAlt="Denise Smith"
-                                  isObjectIconAlwaysVisible="true"
-                                  objectSubtitle="Senior UI Developer">
-                          <uxap:actions>
-                            <uxap:ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized" tooltip="pull-down"/>
-                            <uxap:ObjectPageHeaderActionButton icon="sap-icon://show" text="show state" type="Emphasized" tooltip="show"/>
-                          </uxap:actions>
-                          <uxap:breadCrumbsLinks>
-                            <Link text="All Collections" press="toMain"/>
-                            <Link text="Collection 1" press="handleLink2Press"/>
-                            <Link text="media wall" press="handleLink2Press"/>
-                          </uxap:breadCrumbsLinks>
-                        </uxap:ObjectPageHeader>
-                      </uxap:headerTitle>
+                <Page showHeader="false">
+                    <NavContainer id="pageContainer" initialPage="page2">
+                    <pages>
+                      <uxap:ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
+                        <uxap:headerTitle>
+                          <uxap:ObjectPageHeader objectImageURI="./test-resources/sap/uxap/images/imageID_275314.png"
+                                    objectTitle="Denise Smith"
+                                    objectImageShape="Circle"
+                                    objectImageAlt="Denise Smith"
+                                    isObjectIconAlwaysVisible="true"
+                                    objectSubtitle="Senior UI Developer">
+                            <uxap:actions>
+<!--                               <uxap:ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized" tooltip="pull-down"/> -->
+                              <uxap:ObjectPageHeaderActionButton icon="sap-icon://decline" text="Delete" type="Reject" tooltip="Delete"/>
+                            </uxap:actions>
+                            <uxap:breadCrumbsLinks>
+                              <Link text="All Collections" press="toMain"/>
+                              <Link text="Collection 1" press="handleLink2Press"/>
+                              <Link text="media wall" press="handleLink2Press"/>
+                            </uxap:breadCrumbsLinks>
+                          </uxap:ObjectPageHeader>
+                        </uxap:headerTitle>
 
-                      <uxap:headerContent>
-                      </uxap:headerContent>
+                        <uxap:headerContent>
+                        </uxap:headerContent>
 
-                      <uxap:sections>
-                        <uxap:ObjectPageSection title="General">
-                          <uxap:subSections>
-                            <uxap:ObjectPageSubSection>
-                               <Text text="general"/> 
-                            </uxap:ObjectPageSubSection>
-                          </uxap:subSections>
-                        </uxap:ObjectPageSection>
-                      </uxap:sections>
-                      <uxap:sections>
-                        <uxap:ObjectPageSection title="About">
-                          <uxap:subSections>
-                            <uxap:ObjectPageSubSection>
-                               <Text text="about"/> 
-                            </uxap:ObjectPageSubSection>
-                          </uxap:subSections>
-                        </uxap:ObjectPageSection>
-                      </uxap:sections>
-                    </uxap:ObjectPageLayout>
-                  </pages>
-                </NavContainer>
+                        <uxap:sections>
+                          <uxap:ObjectPageSection title="General">
+                            <uxap:subSections>
+                              <uxap:ObjectPageSubSection>
+                                 <Text text="general"/> 
+                              </uxap:ObjectPageSubSection>
+                            </uxap:subSections>
+                          </uxap:ObjectPageSection>
+                        </uxap:sections>
+                        <uxap:sections>
+                          <uxap:ObjectPageSection title="About">
+                            <uxap:subSections>
+                              <uxap:ObjectPageSubSection>
+                                 <Text text="about"/> 
+                              </uxap:ObjectPageSubSection>
+                            </uxap:subSections>
+                          </uxap:ObjectPageSection>
+                        </uxap:sections>
+                      </uxap:ObjectPageLayout>
+                    </pages>
+                  </NavContainer>
+                  <footer>
+                    <OverflowToolbar>
+                      <ToolbarSpacer/>
+                      <Button type="Emphasized" text="Save"/>
+                      <Button type="Transparent" text="Cancel"/>
+                    </OverflowToolbar>
+                  </footer>
+                </Page>
               </tnt:mainContents>
             </tnt:ToolPage>
 				</content>
