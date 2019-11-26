@@ -63,12 +63,12 @@
                     <pages>
                       <uxap:ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
                         <uxap:headerTitle>
-                          <uxap:ObjectPageHeader objectImageURI="./test-resources/sap/uxap/images/imageID_275314.png"
-                                    objectTitle="Denise Smith"
+                          <uxap:ObjectPageHeader objectImageURI="img/test.png"
+                                    objectTitle="Media Wall"
                                     objectImageShape="Circle"
                                     objectImageAlt="Denise Smith"
                                     isObjectIconAlwaysVisible="true"
-                                    objectSubtitle="Senior UI Developer">
+                                    objectSubtitle="">
                             <uxap:actions>
 <!--                               <uxap:ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized" tooltip="pull-down"/> -->
                               <uxap:ObjectPageHeaderActionButton icon="sap-icon://decline" text="Delete" type="Reject" tooltip="Delete"/>

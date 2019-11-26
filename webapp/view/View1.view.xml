@@ -46,6 +46,7 @@
                 <content>
                   <TileContainer
                     id="container"
+                    editable="true"
                     tileDelete="handleTileDelete"
                     tiles="{/TileCollection}">
                     <StandardTile
