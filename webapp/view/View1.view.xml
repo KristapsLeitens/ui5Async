@@ -33,19 +33,32 @@
                   </TileContainer>
             </l:sideContent>
             <l:mainContent>
-              <TileContainer
-                id="container"
-                tileDelete="handleTileDelete"
-                tiles="{/TileCollection}">
-                <StandardTile
-                  icon="{icon}"
-                  type="{type}"
-                  number="{number}"
-                  numberUnit="{numberUnit}"
-                  title="{title}"
-                  info="{info}"
-                  infoState="{infoState}" />
-              </TileContainer>
+              <Panel expanded="true" height="100%">
+                <headerToolbar>
+                  <Toolbar height="3rem">
+                    <Button icon="sap-icon://menu"></Button>
+                    <Title text="SAP Wall Collections(12)"></Title>
+                    <ToolbarSpacer/>
+                    <SearchField width="300px" placeholder="Search Collection" showRefreshButton="true"/>
+                    <Button icon="sap-icon://filter"></Button>
+                  </Toolbar>
+                </headerToolbar>
+                <content>
+                  <TileContainer
+                    id="container"
+                    tileDelete="handleTileDelete"
+                    tiles="{/TileCollection}">
+                    <StandardTile
+                      icon="{icon}"
+                      type="{type}"
+                      number="{number}"
+                      numberUnit="{numberUnit}"
+                      title="{title}"
+                      info="{info}"
+                      infoState="{infoState}" />
+                  </TileContainer>
+                </content>
+              </Panel>
             </l:mainContent>
           </l:DynamicSideContent>
           
